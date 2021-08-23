@@ -26,7 +26,6 @@ table {
 th.mat-sort-header-sorted {
     color: black;
 }
-
   /*styles de la tabla*/
 .the-table { 
     table-layout: auto;
