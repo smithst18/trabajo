@@ -54,11 +54,13 @@
             <p class='text-center fs-3 text-danger'>
                 Analista: {{userName | titlecase}}
             </p>
+            <hr>
         </div>
         <div class='container justify-content-center' *ngIf="show == true">
             <p class='text-center fs-3 text-danger'>
                 Soportes Realizados por el Analista: {{userName | titlecase}}
             </p>
+            <hr>
         </div>
         <div class = 'mat-elevation-z8'>
             <table mat-table [dataSource]="dataSource" matSort class='text-start'>
