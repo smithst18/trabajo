@@ -52,12 +52,12 @@
     <div id="viewport">
         <div class='container justify-content-center' *ngIf="show != true">
             <p class='text-center fs-3 text-danger'>
-                Analista: {{userName}}
+                Analista: {{userName | titlecase}}
             </p>
         </div>
         <div class='container justify-content-center' *ngIf="show == true">
             <p class='text-center fs-3 text-danger'>
-                Soportes Realizados por el Analista: {{userName}}
+                Soportes Realizados por el Analista: {{userName | titlecase}}
             </p>
         </div>
         <div class = 'mat-elevation-z8'>
