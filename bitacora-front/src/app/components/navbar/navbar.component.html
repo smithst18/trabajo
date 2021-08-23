@@ -1,0 +1,33 @@
+<!--navbar-->
+<nav class="navbar navbar-expand-md navbar-light fixed-top shadow" id="navbarPers">
+    <div class="container-fluid">
+        <a class="navbar-brand ms-2">
+            <img src="assets/icons/ban.jpg" alt="banmujer" class="ms-5" id="logo">
+        </a>
+        <!--colapse-->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPer" aria-controls="navbarPer" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--items-->
+        <div class="collapse navbar-collapse" id="navbarPer">
+            <div class="navbar-nav ali mx-5">
+                <div class="nav-item me-5" >
+                    <a [routerLink]="['/logs']" [routerLinkActive]="['active']" class="nav-link  text-dark"  *ngIf="show == 2">Mis Soportes</a>            
+                </div>
+                <div class="nav-item">
+                    <a [routerLink]="['/charge-logs']" [routerLinkActive]="['active']" class="nav-link text-dark" *ngIf="show == 2">Guardar Soporte</a>
+                </div>
+            </div>
+            <div class="ali ms-auto" *ngIf="show == 2 || show == 1" >
+                <div class="ms-auto text-decoration-none text-black mx-5">
+                    <a  class="nav-link text-dark pointer" (click)="closeSession()">Cerrar Sesion</a>
+                </div>
+            </div>
+            <div class="ali ms-auto" *ngIf="show == 0">
+                <div class="ms-auto text-decoration-none text-black mx-5">
+                    <a  class="nav-link text-dark pointer" [routerLink]="['/signIn']">Iniciar Sesion</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

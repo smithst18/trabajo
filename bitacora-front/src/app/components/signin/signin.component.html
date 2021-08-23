@@ -1,0 +1,40 @@
+<!--formulario de entrada-->
+    <div class="container">
+        <div class="row justify-content-center align-items-center " id="viewport">
+            <div class="col-md-5 col-9 shadow p-5">
+                <form #singInForm = "ngForm" class="border rounded border-danger p-5" nonvalidate>
+                    <div class="text-center fs-4">
+                        <p>Iniciar Sesion</p>
+                    </div>
+                    <!--alert-->
+                    <div class="alert alert-primary d-flex align-items-center" role="alert" *ngIf = "alert == true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                          <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                        </svg>
+                        <div class='ms-2'>
+                            <span>Credenciales Invalidas o</span>
+                            <br>
+                            <span>Usuario Inexistente</span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="ci" class="form-label">CI:</label>
+                        <input type="text" class="form-control" name="ci" placeholder="ejm: 27589632" id="ci" #ci="ngModel" 
+                        (keyup.enter)="validation(singInForm)" [(ngModel)]="user.ci" ngModel required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Contraseña:</label>
+                        <input type="password" class="form-control" name="password" id="password" placeholder=" ******* "
+                        #ci="ngModel" [(ngModel)]="user.password" (keyup.enter)="validation(singInForm)"  ngModel required>
+                    </div>
+                    <div class="col-md-12 ">
+                        <div class="d-grid gap-2">
+                            <input class="btn btn-danger btn-sm" id="log" type="button" value="inciar sesion"
+                            (click)="validation(singInForm)" [disabled] = "!singInForm.form.valid">
+                            <input class="btn btn-danger btn-sm" type="button" value="registrarse" [routerLink]="['/logIn']">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

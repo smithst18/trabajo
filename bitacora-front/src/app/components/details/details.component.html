@@ -1,0 +1,93 @@
+<div class="container mb-5" id="viewport">
+    <div class="row justify-content-md-center">
+        <div class="col-md-9 shadow border border-danger">
+            <form #UpdateForm = "ngForm" class="p-5" nonvalidate>
+                <div class="text-center">
+                    <span class="text-muted">EDITAR REPORTE</span>
+                </div>
+                <div class="mb-3">
+                    <label for="date" class="form-label">Fecha:</label>
+                    <input type="date" class="form-control" id="date" name="date" #date = "ngModel" [(ngModel)]="report.date" ngModel required>
+                </div>
+                <div class="mb-3">
+                    <label for="department" class="form-label">Nombre y Apellido:</label>
+                    <input type="text" class="form-control" id="name" name="name"  #name = "ngModel" 
+                    [(ngModel)]="report.name" ngModel required>
+                </div>
+                <div class="mb-3">
+                    <label for="department" class="form-label">Departamento:</label>
+                    <input type="text" class="form-control" id="department" name="department"  #department = "ngModel" 
+                    [(ngModel)]="report.department" ngModel required>
+                </div>
+                <div class="mb-3">
+                    <label for="problemDescription" class="form-label">Descripcion/Soporte:</label>
+                    <input type="text" class="form-control" id="problemDescription" name="problemDescription" #problemDescription = "ngModel" 
+                    [(ngModel)]="report.problemDescription" ngModel required>
+                </div>
+                <div class="mb-3">
+                    <label for="toolName" class="form-label">Nombre del Equipo</label>
+                    <input type="text" class="form-control" id="toolName" name="toolName" #toolName = "ngModel" 
+                    [(ngModel)]="report.toolName" ngModel required>
+                </div>
+                <div class="mb-3">
+                    <label for="toolNumber" class="form-label">Numero del bien</label>
+                    <input type="text" class="form-control" id="toolNumber" name="toolNumber" #toolNumber = "ngModel" 
+                    [(ngModel)]="report.toolNumber">
+                </div>
+                <div class="mb-3">
+                    <label for="lastDate" class="form-label">Ultima Fecha de Soporte</label>
+                    <input type="date" class="form-control" id="lastDate" name="lastDate" #lastDate = "ngModel" 
+                    [(ngModel)]="report.lastDate" ngModel required>
+                </div>
+                <div class="mb-4">
+                    <p> Estado del bien </p>
+                    <select class="form-select justify-content-center" aria-label="Default select example" id="status" name="status" #status = "ngModel" 
+                    [(ngModel)]="report.status" ngModel required>
+                        <option disabled>----------------------- Estado del bien -----------------------</option>
+                        <option value="Funcional">Funcional</option>
+                        <option value="Parcial">Parcial</option>
+                        <option value="Nulo">Nulo</option>
+                    </select>
+                </div>
+            </form>
+            <div class="container boder mb-5">
+                <div class="row justify-content-center text-center">
+                    <div class="col-6">
+                        <button class="btn btn-danger" (click)="updateReport()" [disabled] = "!UpdateForm.form.valid || report.toolNumber == 0">
+                            Cambiar
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            Borrar
+                        </button>
+                    </div>
+                    <!--modal-->
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Eliminar?</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Estas seguro que desea eliminar el registro?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="deleteReport()">Si, quiero Eliminar</button>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                    <!--modal-->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix">...</div>

@@ -1,0 +1,70 @@
+<!--formulario de entrada-->
+<div class="container my-5">
+    <div class="row justify-content-center align-items-center align-items-sm-end" id="viewport">
+        <div class="col-md-6 col-9 shadow p-5">
+        <div class=" border rounded border-danger px-5 py-4">
+            <form #userForm = "ngForm" (ngSubmit) = "Validation(userForm)" nonvalidate>
+                <div class="text-center fs-3">
+                    <p>Crear Usuario</p>
+                </div>
+                <!--alert-->
+                <div class="alert alert-primary d-flex align-items-center" role="alert" *ngIf="alert">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                      <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                    </svg>
+                    <div>
+                        <ul>
+                            <li>Los Datos ingresados deben ser validos</li>
+                            <li>No puedes registrar un usuario por la misma cedula</li>
+                            <li>Las contraseñas deben coincidir</li>
+                            <li>No puede haber ningun campo vacio</li>
+                        </ul>
+                    </div>
+                </div>
+                 <!--alert-->
+                <div class="mb-3">
+                    <label for="user" class="form-label">Nombre y Apellido:</label>
+                    <input type="text" class="form-control" id="user" name="name" #name = "ngModel" placeholder="ejm: Marco Perez"
+                     [(ngModel)]="user.name" ngModel required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña:</label>
+                    <input type="password" class="form-control" id="password" name="password"  #password = "ngModel" placeholder="*****"
+                    [(ngModel)]="user.password" ngModel required>
+                </div>
+                <div class="mb-3">
+                    <label for="repassword" class="form-label">Repetir Contraseña:</label>
+                    <input type="password" class="form-control" id="repassword" name="repass" #repassword = "ngModel" placeholder="*****" 
+                    [(ngModel)]="user.repassword" ngModel required>
+                </div>
+                <div class="mb-3">
+                    <label for="ci" class="form-label">CI:</label>
+                    <input type="text" class="form-control" id="ci" name="ci" #ci = "ngModel" placeholder="ejm: 27589654"
+                    [(ngModel)]="user.ci" ngModel required>
+                </div>
+                <!--radio-->
+                <div class="mb-3">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="ShowImputCode()">
+                    <label class="form-check-label ms-1" for="flexCheckDefault">
+                      Eres admin ?
+                    </label>
+                </div>
+                 <!--code-->
+                <div class="mb-5" *ngIf="showCode == true">
+                    <label for="code" class="form-label">Codigo</label>
+                    <input type="number" class="form-control" id="code" name="code" #code = "ngModel" [(ngModel)]="user.code">
+                </div>
+                
+                <!--botones-->
+                <div class="d-grid gap-2 ">
+                    <input class="btn btn-danger" type="submit" value="registrarse" [disabled] = "!userForm.form.valid">
+                </div>
+            </form>
+            <div class="d-grid gap-2 mt-2">
+                <button class="btn btn-danger" value="inciar sesion" [routerLink]="['/signIn']">inciar sesion</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix text-white">...</div>

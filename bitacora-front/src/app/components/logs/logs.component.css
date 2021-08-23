@@ -1,0 +1,28 @@
+.table-text{
+    font-size: 0.8em;
+}
+/*boton volver*/
+.botonVolver:hover{
+    border-bottom: 1px solid #d9534f;
+    border-top: 1px solid #d9534f;
+}
+
+/* Estilos de la tabla de logs*/
+.mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+}
+  
+.mat-row:hover .mat-cell {
+    border-color: #d9534f;
+    color: #d9534f;
+}
+
+table {
+    width: 100%;
+}
+/*sort by styles */
+th.mat-sort-header-sorted {
+    color: black;
+  }

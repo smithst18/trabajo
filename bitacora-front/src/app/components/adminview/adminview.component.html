@@ -1,0 +1,28 @@
+<main class="container-fluid mx-1"> 
+    <div class="row justify-content-center align-items-md-center" id="viewport">
+        <div class="col-md-9 border shadow p-5">
+            <span *ngIf="!users"> No hay Analistas registrados</span>
+            <table class="table table-hover table-responsive border border-danger table-text text-center text-danger">
+                <caption class="ms-2">Listado de Analistas en el area de tecnologia de banmujer</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">N°</th>
+                        <th scope="col">Analista</th>
+                        <th scope="col">CI</th>
+                        <th scope="col">Soportes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor=" let user of users ; index as i">
+                        <th scope="row">{{i+1}}</th>
+                        <th scope="row">{{user.name}}</th>
+                        <td>{{user.ci}}</td>
+                        <td>
+                            <a (click)="setId(user.ci,user.name)"  [routerLink]="['/logs']" class="text-success">Ver</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,25 @@
+.active{
+    color: #d9534f!important;
+    border-bottom: 1px solid #d9534f;
+}
+div>div>div>a{
+    transition:0.4s transform;
+}
+div>div>div>a:hover{
+    color: #d9534f!important;
+    border-bottom: 1px solid #d9534f;
+    transform:scale(0.96);
+}
+
+.pointer {cursor: pointer;}
+
+/*IMAGENES*/
+
+#logo{
+    height:50px;
+    width:200px;
+}
+#navbarPers{
+    background: rgb(255, 255, 255);
+    border-color: #d9534f;
+}
