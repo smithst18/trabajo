@@ -1,11 +1,11 @@
 export class User  {
     constructor(
-        public name: String,
-        public password: String,
-        public repassword: String,
+        public name: string,
+        public password: string,
+        public repassword: string,
         public code: number,
-        public ci:String,
-        public permise: Boolean,
+        public ci:string,
+        public permise: boolean,
     ){}
 }
 

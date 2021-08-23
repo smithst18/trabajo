@@ -15,7 +15,7 @@
                 <tbody>
                     <tr *ngFor=" let user of users ; index as i">
                         <th scope="row">{{i+1}}</th>
-                        <th scope="row">{{user.name}}</th>
+                        <th scope="row">{{user.name | titlecase}}</th>
                         <td>{{user.ci}}</td>
                         <td>
                             <a (click)="setId(user.ci,user.name)"  [routerLink]="['/logs']" class="text-success">Ver</a>
