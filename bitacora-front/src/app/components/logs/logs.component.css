@@ -25,4 +25,10 @@ table {
 /*sort by styles */
 th.mat-sort-header-sorted {
     color: black;
-  }
+}
+
+  /*styles de la tabla*/
+.the-table { 
+    table-layout: auto;
+    word-wrap: break-word;
+}

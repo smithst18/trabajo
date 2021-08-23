@@ -63,59 +63,59 @@
             <hr>
         </div>
         <div class = 'mat-elevation-z8'>
-            <table mat-table [dataSource]="dataSource" matSort class='text-start'>
+            <table mat-table [dataSource]="dataSource" matSort class='text-start the-table'>
                 <!-- Position Column -->
                 <ng-container matColumnDef="position">
-                <th mat-header-cell *matHeaderCellDef> N° reporte </th>
-                <td mat-cell *matCellDef="let element; index as i"> {{i+1}} </td>
+                <th mat-header-cell *matHeaderCellDef class="m-5"> N°&nbsp; </th>
+                <td mat-cell *matCellDef="let element; index as i"> {{ i+1 }} </td>
                 </ng-container>
             
                 <!-- Name Column -->
                 <ng-container matColumnDef="name">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre y Apellido </th>
-                <td mat-cell *matCellDef="let element"> {{element.name | titlecase}} </td>
+                <td mat-cell *matCellDef="let element"> {{ element.name | titlecase }} </td>
                 </ng-container>
             
                 <!-- date Column -->
                 <ng-container matColumnDef="date">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
-                <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                <td mat-cell *matCellDef="let element"> {{ element.date }} </td>
                 </ng-container>
             
                 <!-- department Column -->
                 <ng-container matColumnDef="department">
                 <th mat-header-cell *matHeaderCellDef> Departamento </th>
-                <td mat-cell *matCellDef="let element"> {{element.department | titlecase}} </td>
+                <td mat-cell *matCellDef="let element"> {{ element.department | titlecase }} </td>
                 </ng-container>
 
                 <!-- problemDescription Column -->
                 <ng-container matColumnDef="problemDescription">
                 <th mat-header-cell *matHeaderCellDef> Descripcion/Problema </th>
-                <td mat-cell *matCellDef="let element"> {{element.problemDescription}} </td>
+                <td mat-cell *matCellDef="let element"> {{ element.problemDescription }} </td>
                 </ng-container>
 
                 <!-- toolName Column -->
                 <ng-container matColumnDef="toolName">
                 <th mat-header-cell *matHeaderCellDef> Herramienta/Bien </th>
-                <td mat-cell *matCellDef="let element"> {{element.toolName}} </td>
+                <td mat-cell *matCellDef="let element"> {{ element.toolName }} </td>
                 </ng-container>
 
                 <!-- toolNumber Column -->
                 <ng-container matColumnDef="toolNumber">
                     <th mat-header-cell *matHeaderCellDef> Numero del bien </th>
-                    <td mat-cell *matCellDef="let element"> {{element.toolNumber}} </td>
+                    <td mat-cell *matCellDef="let element"> {{ element.toolNumber }} </td>
                 </ng-container>
 
                 <!-- lastDate Column -->
                 <ng-container matColumnDef="lastDate">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Ult. Fecha sop </th>
-                    <td mat-cell *matCellDef="let element"> {{element.lastDate}} </td>
+                    <td mat-cell *matCellDef="let element"> {{ element.lastDate }} </td>
                 </ng-container>
 
                 <!-- status Column -->
                 <ng-container matColumnDef="status">
                     <th mat-header-cell *matHeaderCellDef> Estatus </th>
-                    <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                    <td mat-cell *matCellDef="let element"> {{ element.status }} </td>
                 </ng-container>
                 
                 <!-- details Column -->
@@ -133,7 +133,7 @@
                 [pageSizeOptions]="[5, 10, 25, 100, 200]"
                 aria-label="Select page of dataSource" class='bg-danger'>
             </mat-paginator>
-    </div>
+        </div>
     </div>
 </div>
 <div>
