@@ -5,7 +5,7 @@ import { Global } from "./global";
 import { User } from "../models/user";
 import { tap } from "rxjs/operators";
 import { Jwt } from "./jwt";
-import { Router } from "@angular/router"
+import { Router } from "@angular/router";
 
 @Injectable()
 export class UserService {

@@ -73,7 +73,7 @@
                     <p> Estado del bien </p>
                     <select class="form-select justify-content-center" aria-label="Default select example" id="status" name="status" #status = "ngModel" 
                     [(ngModel)]="report.status" ngModel required>
-                        <option disabled>----------------------- Estado del bien -----------------------</option>
+                        <option disabled *ngFor="let type of productTypes">----------------------- Estado del bien -----------------------</option>
                         <option value="Funcional">Funcional</option>
                         <option value="Parcial">Parcial</option>
                         <option value="Nulo">Nulo</option>
